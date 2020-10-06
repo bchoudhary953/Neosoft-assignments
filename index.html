@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en" dir="ltr"><![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie" lang="en" dir="ltr"><![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9 ie" lang="en" dir="ltr"><![endif]-->
@@ -22,14 +22,148 @@
 <!-- bxSlider Javascript file -->
 <script src="js/jquery.bxslider.min.js"></script>
 <script src="js/script.js" type="text/javascript"></script>
-
+<script src="js/validation.js" type="text/javascript"></script>
 <!-- bxSlider CSS file -->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <!-- Responsive -->
 <link href="css/responsive.css" rel="stylesheet" />
 
+<script>
+$(document).ready(function(){
+	   $('form').submit(function(e) {
+	    e.preventDefault();
+	    var first_name = $('#firstname').val();
+	    var last_name = $('#lastname').val();
+	    var email = $('#email').val();
+	    var office = $('#office').val();
+	    var phone = $('#phone').val();
+	    var password = $('#password').val();
+	    var pwd = $('#pwd').val();
+	    var radioValue = $("input[name='gender']:checked").val();
+	    var checkValue = $("input[name='interest']:checked").val();
+	    $(".error").remove();
 
-<script type = "text/javascript" src="js/validation.js"></script>
+	    
+	    if (first_name.length < 1) {
+	     alert("Enter name");
+	     firstname.focus();
+	     return false;
+	    }
+	    if (last_name.length < 1) {
+	      alert("Enter last name");
+	      lastname.focus();
+	     return false;
+	    }
+	    
+	    if ($('#phone').val().length < 1) {
+	      alert("Enter phone number");
+	      phone.focus();
+	     return false;
+	    }
+	    else{
+		var validphone = /^[0-9]+$/.test(phone);
+		if (phone.length < 10 || !validphone ) {
+	      	   alert("Enter valid phone number");
+		   phone.focus();
+	           return false;
+		}
+	    }
+	   var valid = /^[0-9]+$/.test(office);
+		
+	   if( !valid){
+		alert("Enter valid office number");
+		office.focus();
+	        return false;
+	   }
+	   if(!radioValue){
+                alert("Enter gender");
+	        return false;
+            }
+	    if(!checkValue){
+                alert("Enter at least one interest");
+		return false;
+            }
+	    if ($('#password').val().length < 1) {
+	        alert("Enter password");
+		password.focus();
+	        return false;
+	    }
+	    else{
+		var pattern=  /^[A-Za-z]\w{8,12}$/;
+		if (!pattern.test(password)){
+		   alert("Password Range should be between 8 to 12 charachers, only Alphanumeric characters, No Special characters");
+		   password.focus();
+	           return false;
+		}
+	    }
+	    if (pwd.length < 1 || pwd != password ) {
+	        alert("Confirm the password");
+		pwd.focus();
+	        return false;
+	    }
+	    
+	    if ($('#month').val() == 0 || $('#day').val() == 0 || $('#year').val() == 0) {
+         	alert("Enter DOB");
+		return false;
+	    }
+	     
+	    if ($('#about').val().length < 1) {
+	        alert("Enter about you");
+		about.focus();
+	        return false;
+	    }
+	    if (email.length < 1) {
+	        alert("Enter email id");
+		email.focus();
+	        return false;
+	    } else {
+	    
+ 	      var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	      var validEmail = regEx.test(email);
+	      if (!validEmail) {
+		alert("Enter valid email id");
+		email.focus();
+		return false;
+	      }
+	    }
+	   
+           return true;
+        
+        });
+});
+$(document).ready(function(){
+	$("#year").mouseleave(function(){
+	var today = new Date();
+	var birthday = new Date($("#year").val(), $("#month").val(),$("#day").val());
+        
+        var differenceInMilisecond = today - birthday;
+       
+        var year_age = Math.floor(differenceInMilisecond / 31536000000);
+        var day_age = Math.floor((differenceInMilisecond % 31536000000) / 86400000);
+        
+        
+        var month_age = ((Math.floor(day_age/30))+1);
+        
+        if(month_age == 12){
+		year_age++;
+		month_age=0;
+	}
+        var age = year_age +"."+month_age;
+	
+        $("#age").val(age);
+	});
+
+
+   
+});
+
+
+
+</script>
 
 </head>
 
@@ -38,7 +172,7 @@
 <div id="wrapper"> 
   
  <!--header-starts-->
-  <header class="clearfix">
+  <header class="clearfix fixed-top" style="background-color:white;">
 
     <div class="container"><!--container Start-->
 
@@ -119,43 +253,43 @@
 			</div>
 
 			<div class="contect_text">So we can successfully match your details with suitable people, we first need to collect some information about you. Read each question carfully and  select or place a tick in the box for each of your characteristics. Please answer as honestly as you can, otherwise you may be disappointed with your matches and they with you.</div>
-			<form action= "ass2.html" name= "myForm">
+			<form action= "ass2.html" name= "myForm" id="myForm" >
 			<div class="form_container_block">
 				<ul>
 					<li class="fileds">
 						<div class="name_fileds">
 							<label>First Name</label>
-							<input name="firstname" type="text" /> 
+							<input name="firstname" id="firstname" type="text" /> 
 						</div>
 						<div class="name_fileds">
 							<label>Last Name</label>
-							<input name="lastname" type="text" /> 
+							<input name="lastname" id="lastname" type="text" /> 
 						</div>
 					</li>
 					<li class="fileds">
 						<div class="phone_fileds">
 							<label>Phone No</label>
-							<input name="phone" type="text" /> 
+							<input name="phone" id="phone" type="text" /> 
 						</div>
 						<div class="phone_fileds">
 							<label>Office No</label>
-							<input name="office" type="text" /> 
+							<input name="office" id="office" type="text" /> 
 						</div>
 					</li>					
 					<li class="fileds">
 						<div class="email_fileds">
 							<label>Email</label>
-							<input name="email" type="text" /> 
+							<input name="email" id="email" type="text" /> 
 						</div>
 						<div class="pass_fileds">
 							<label>Password</label>
-							<input name="password" type="text" /> 
+							<input name="password" id="password" type="text" /> 
 						</div>
 					</li>
 					<li class="fileds">
 						<div class="pass_fileds">
 							<label>Confirm Password</label>
-							<input name="pwd" type="text" /> 
+							<input name="pwd" id="pwd" type="text" /> 
 						</div>
 							<div class="dob_fileds selectbox">
 								<label>My birthdate is</label>
@@ -272,13 +406,13 @@
 					<li class="fileds">
 						<div class="age_fileds">
 							<label>Age</label>
-							<input name="age" id="age" type="text" disabled/> 
+							<input name="age" id="age" type="text" disabled/>
 						</div>
 						<div class="gender_fileds">
 							<label>Gender</label>
 							<ul>
-								<li><input type="radio" class="radio" id="residence1" name="gender" value="male"/><label class="radio-label" for="residence1">Male</label></li>
-								<li><input type="radio" class="radio" id="residence2" name="gender" /><label class="radio-label" for="residence2">Female</label></li>
+								<li><input type="radio" class="radio" id="male" name="gender" value="male"/><label class="radio-label" for="male">Male</label></li>
+								<li><input type="radio" class="radio" id="female" name="gender" /><label class="radio-label" for="female">Female</label></li>
 							</ul>	
 						</div>
 					</li>
@@ -286,9 +420,9 @@
 						<div class="interest_fileds">
 						<label>Interest</label>
 							<ul>
-								<li><input type="checkbox" class="checkbox" name="interest" id="checkbox_sample18" /> <label class="css-label" for="checkbox_sample18">Biking</label></li>
-								<li><input type="checkbox" class="checkbox" name="interest" id="checkbox_sample19" /> <label class="css-label" for="checkbox_sample19">Reading</label></li>
-								<li><input type="checkbox" class="checkbox" name="interest" id="checkbox_sample20" /> <label class="css-label" for="checkbox_sample20">Playing</label></li>
+								<li><input type="checkbox" class="checkbox" name="interest" id="checkbox_1" /> <label class="css-label" for="checkbox_1">Biking</label></li>
+								<li><input type="checkbox" class="checkbox" name="interest" id="checkbox_2" /> <label class="css-label" for="checkbox_2">Reading</label></li>
+								<li><input type="checkbox" class="checkbox" name="interest" id="checkbox_3" /> <label class="css-label" for="checkbox_3">Playing</label></li>
 							</ul>
 						</div>
 						<div class="about_you_fileds">
@@ -298,9 +432,7 @@
 					</li>
 				</ul>
 				<div class="next_btn_block">
-					<div class="next_btn" onclick="return validation()">
-						<a href="1.html">Proceed to Step 2 <span><img src="images/small_triangle.png" alt="small_triangle"> </span></a>
-					</div>
+					<input type="submit" value="Submit" />
 				</div>
 			</div>
 		</div>
