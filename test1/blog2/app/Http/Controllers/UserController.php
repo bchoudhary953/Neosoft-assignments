@@ -20,7 +20,7 @@ class UserController extends Controller
             	'mobile_no'=>'required|unique:tests|max:14',
             	'city'=>'required',
             	'gender'=>'required',
-            	'profile_photo'=>'required|image|mimes:png,jpg|max:2048',
+            //	'profile_photo'=>'required|image|mimes:png,jpg|max:2048',
             ]);
 
             
