@@ -17,10 +17,10 @@ class UserController extends Controller
             	'first_name'=>'required',
             	'last_name'=>'required',
             	'email'=>'required|unique:tests|email',
-            	'mobile_no'=>'required|unique:tests|max:14',
+            	'mobile_no'=>'required|unique:tests|numeric|max:14',
             	'city'=>'required',
             	'gender'=>'required',
-            //	'profile_photo'=>'required|image|mimes:png,jpg|max:2048',
+            	'file'=>'image|mimes:png,jpg|max:2048',
             ]);
 
             
