@@ -60,12 +60,14 @@
                         @enderror 
                     </div>
                     
-                    <div class="input-group mb-3">
+                   <div class="input-group mb-3">
                          Profile Photo:
-                        <input type="file" id="image" name="image" accept="image/*">
-                        @error('profile_photo')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror 
+                        <input type="file" name="image" class="form-control @error('gender') is-invalid @enderror"value="{{ old('image') }}">
+                          @if ($errors->has('file'))
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{ $errors->first('file') }}</strong>
+                              </span>
+                          @endif 
                     </div>
                     <div class="row">
                         <!-- /.col -->
