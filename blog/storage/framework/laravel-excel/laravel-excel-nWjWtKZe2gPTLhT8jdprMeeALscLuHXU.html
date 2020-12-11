@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="pxF79ewd1tVBV7Yv7PcG3cEw5HEFrWhB2spCDfQR">
+    <title>    Registered User Report Result
+</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/Backend/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/Backend/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="http://127.0.0.1:8000/Backend/css//dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/Backend/css/responsive.bootstrap4.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="../../index3.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Contact</a>
+        </li>
+
+        <form class="form-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+                    <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/login">Login</a>
+            </li>
+                            <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/register">Register</a>
+                </li>
+                        </ul>
+
+    <!-- SEARCH FORM -->
+
+
+
+    <!-- Right navbar links -->
+
+</nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../../index3.html" class="brand-link">
+        <img src="http://127.0.0.1:8000/Backend/img/AdminLTELogo.png"
+             alt="AdminLTE Logo"
+             class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light">Admin E-Commerce</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+
+
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+
+
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+
+                <li class="nav-item has-treeview">
+                    <a href="http://127.0.0.1:8000/admin/dashboard" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            User management
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/add-user" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add User</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/user_management" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View User</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            Configuration management
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/add-config" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Configuration</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/config_management" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Configuration</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            Banner management
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/add-banners" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Banner</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/banners" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Banner</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            Categories
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/add-category" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/view-categories" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Category</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-project-diagram"></i>
+                        <p>
+                            Products
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/add-product" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Product</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/view-products" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Product</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-gift"></i>
+                        <p>
+                            Coupon
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/add-coupon" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Coupon</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/view-coupons" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Coupon</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-gift"></i>
+                        <p>
+                            Orders
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/view-orders" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>New Order</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/pending-orders" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pending Order</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/delivered-orders" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Delivered Order</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/completed-orders" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Completed Order</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            CMS
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/add-cms-page" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add CMS Pages</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/view-cms-pages" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View CMS Pages</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            Report
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/search-report" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Search report for sales</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/search-registeredUser-report" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Search report for registered user</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/search-usedCoupon-report" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Search report for used coupon</p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="http://127.0.0.1:8000/admin/contact-us" class="nav-link">
+                            <i class="nav-icon fas fa-question"></i>
+                            <p>
+                                Contact Us Messages
+                            </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+
+
+    </div>
+
+    <!-- /.sidebar -->
+</aside>
+        <!-- Sidebar -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-12">
+                            <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                                           
+                </div>
+                <!-- /.card-header -->
+                <div id="message_success" style="display: none;" class="alert alert-success">Status Enabled</div>
+                <div id="message_error" style="display: none;" class="alert alert-danger">Status Disabled</div>
+
+                <div class="card-body table-responsive">
+                    <table class="table table-head-fixed text-nowrap"  id="example1">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                                                                            <tr>
+                                <td>1</td>
+                                <td>Admin</td>
+                                <td>admin</td>
+                                <td>admin123@admin</span></td>
+                                <td>admin</td>
+                                <td>
+                                    <input type="checkbox" style="width: 20px;" name="status" class="UserStatus" data-toggle="toggle" rel="5" data-on="Enabled" data-off="Disabled" data-onstyle="success" data-offstyle="danger"  checked >
+                                    <div id="myElem" style="display: none;" class="alert alert-success">Status Enabled</div>
+                                </td>
+                                <td><a href="/role-edit/5"> <button class="btn btn-success"><i class="fas fa-pen"></i></button></a></td>
+                                <td>
+                                    <form action="/role-delete/5" method="post">
+                                        <input type="hidden" name="_token" value="pxF79ewd1tVBV7Yv7PcG3cEw5HEFrWhB2spCDfQR">                                        <input type="hidden" name="_method" value="DELETE">                                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>2</td>
+                                <td>Khushboo</td>
+                                <td>choudhary</td>
+                                <td>testuser2@test.com</span></td>
+                                <td>customer</td>
+                                <td>
+                                    <input type="checkbox" style="width: 20px;" name="status" class="UserStatus" data-toggle="toggle" rel="54" data-on="Enabled" data-off="Disabled" data-onstyle="success" data-offstyle="danger"  checked >
+                                    <div id="myElem" style="display: none;" class="alert alert-success">Status Enabled</div>
+                                </td>
+                                <td><a href="/role-edit/54"> <button class="btn btn-success"><i class="fas fa-pen"></i></button></a></td>
+                                <td>
+                                    <form action="/role-delete/54" method="post">
+                                        <input type="hidden" name="_token" value="pxF79ewd1tVBV7Yv7PcG3cEw5HEFrWhB2spCDfQR">                                        <input type="hidden" name="_method" value="DELETE">                                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>3</td>
+                                <td>Bhavna</td>
+                                <td>choudhary</td>
+                                <td>user@app.com</span></td>
+                                <td>customer</td>
+                                <td>
+                                    <input type="checkbox" style="width: 20px;" name="status" class="UserStatus" data-toggle="toggle" rel="55" data-on="Enabled" data-off="Disabled" data-onstyle="success" data-offstyle="danger"  checked >
+                                    <div id="myElem" style="display: none;" class="alert alert-success">Status Enabled</div>
+                                </td>
+                                <td><a href="/role-edit/55"> <button class="btn btn-success"><i class="fas fa-pen"></i></button></a></td>
+                                <td>
+                                    <form action="/role-delete/55" method="post">
+                                        <input type="hidden" name="_token" value="pxF79ewd1tVBV7Yv7PcG3cEw5HEFrWhB2spCDfQR">                                        <input type="hidden" name="_method" value="DELETE">                                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>4</td>
+                                <td>Choudhary</td>
+                                <td></td>
+                                <td>ckhushboo38@gmail.com</span></td>
+                                <td>customer</td>
+                                <td>
+                                    <input type="checkbox" style="width: 20px;" name="status" class="UserStatus" data-toggle="toggle" rel="96" data-on="Enabled" data-off="Disabled" data-onstyle="success" data-offstyle="danger"  checked >
+                                    <div id="myElem" style="display: none;" class="alert alert-success">Status Enabled</div>
+                                </td>
+                                <td><a href="/role-edit/96"> <button class="btn btn-success"><i class="fas fa-pen"></i></button></a></td>
+                                <td>
+                                    <form action="/role-delete/96" method="post">
+                                        <input type="hidden" name="_token" value="pxF79ewd1tVBV7Yv7PcG3cEw5HEFrWhB2spCDfQR">                                        <input type="hidden" name="_method" value="DELETE">                                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                                                    <tr>
+                                <td>5</td>
+                                <td>Anita</td>
+                                <td>Choudhary</td>
+                                <td>bchoudhary953@gmail.com</span></td>
+                                <td>superadmin</td>
+                                <td>
+                                    <input type="checkbox" style="width: 20px;" name="status" class="UserStatus" data-toggle="toggle" rel="99" data-on="Enabled" data-off="Disabled" data-onstyle="success" data-offstyle="danger"  checked >
+                                    <div id="myElem" style="display: none;" class="alert alert-success">Status Enabled</div>
+                                </td>
+                                <td><a href="/role-edit/99"> <button class="btn btn-success"><i class="fas fa-pen"></i></button></a></td>
+                                <td>
+                                    <form action="/role-delete/99" method="post">
+                                        <input type="hidden" name="_token" value="pxF79ewd1tVBV7Yv7PcG3cEw5HEFrWhB2spCDfQR">                                        <input type="hidden" name="_method" value="DELETE">                                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    </div>
+                </div>
+
+            </div><!-- /.container-fluid -->
+        </section>
+
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+        <b>Version</b> 3.0.5
+    </div>
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    reserved.
+</footer>
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="http://127.0.0.1:8000/Backend/js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="http://127.0.0.1:8000/Backend/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="http://127.0.0.1:8000/Backend/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="http://127.0.0.1:8000/Backend/js/demo.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- Charting library -->
+    <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+    <!-- Chartisan -->
+    <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
+    <!-- Your application script -->
+    
+<script>
+    $(document).ready(function () {
+        //banner status
+        $(".BannerStatus").change(function () {
+            var id = $(this).attr('rel');
+            if ($(this).prop("checked") == true) {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-status',
+                    data: {status: '1', id: id},
+                    success: function (data) {
+                        $("#message_success").show();
+                        setTimeout(function () {
+                            $("#message_success").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+            else {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-status',
+                    data: {status: '0', id: id},
+                    success: function (resp) {
+                        $("#message_error").show();
+                        setTimeout(function () {
+                            $("#message_error").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+        });
+        //category status
+        $(".CategoryStatus").change(function () {
+            var id = $(this).attr('rel');
+            if ($(this).prop("checked") == true) {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-category-status',
+                    data: {status: '1', id: id},
+                    success: function (data) {
+                        $("#message_success").show();
+                        setTimeout(function () {
+                            $("#message_success").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+            else {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-category-status',
+                    data: {status: '0', id: id},
+                    success: function (resp) {
+                        $("#message_error").show();
+                        setTimeout(function () {
+                            $("#message_error").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+        });
+        //CMS Page Status
+        $(".CmsStatus").change(function () {
+            var id = $(this).attr('rel');
+            if ($(this).prop("checked") == true) {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-cms-status',
+                    data: {status: '1', id: id},
+                    success: function (data) {
+                        $("#message_success").show();
+                        setTimeout(function () {
+                            $("#message_success").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+            else {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-cms-status',
+                    data: {status: '0', id: id},
+                    success: function (resp) {
+                        $("#message_error").show();
+                        setTimeout(function () {
+                            $("#message_error").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+        });
+        //User status
+        $(".UserStatus").change(function () {
+            var id = $(this).attr('rel');
+            if ($(this).prop("checked") == true) {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-user-status',
+                    data: {status: '1', id: id},
+                    success: function (data) {
+                        $("#message_success").show();
+                        setTimeout(function () {
+                            $("#message_success").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            } else {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-user-status',
+                    data: {status: '0', id: id},
+                    success: function (resp) {
+                        $("#message_error").show();
+                        setTimeout(function () {
+                            $("#message_error").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+        });
+        //product status
+        $(".FeatureStatus").change(function () {
+            var id = $(this).attr('rel');
+            if ($(this).prop("checked") == true) {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-Product-Status',
+                    data: {status: '1', id: id},
+                    success: function (data) {
+                        $("#message_success").show();
+                        setTimeout(function () {
+                            $("#message_success").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+            else {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-Product-Status',
+                    data: {status: '0', id: id},
+                    success: function (resp) {
+                        $("#message_error").show();
+                        setTimeout(function () {
+                            $("#message_error").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+        });
+        //coupon status
+        $(".CouponStatus").change(function () {
+            var id = $(this).attr('rel');
+            if ($(this).prop("checked") == true) {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-Coupon-Status',
+                    data: {status: '1', id: id},
+                    success: function (data) {
+                        $("#message_success").show();
+                        setTimeout(function () {
+                            $("#message_success").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+            else {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'post',
+                    url: '/update-Coupon-Status',
+                    data: {status: '0', id: id},
+                    success: function (resp) {
+                        $("#message_error").show();
+                        setTimeout(function () {
+                            $("#message_error").fadeOut('slow');
+                        }, 2000);
+                    }, error: function () {
+                        alert("Error");
+                    }
+                });
+            }
+        });
+        //Add product attribute
+        $(document).ready(function () {
+            var maxField = 10; //Input fields increment limitation
+            var addButton = $('.add_button'); //Add button selector
+            var wrapper = $('.field_wrapper'); //Input field wrapper
+            var fieldHTML = '<div class="d-flex"><input type="text" name="sku[]" id="sku[]" style="width: 120px;" placeholder="SKU" CLASS="form-control mr-2 mt-2" value=""/><input type="text" name="size[]" id="size[]" style="width: 120px;" placeholder="SIZE" CLASS="form-control mr-2 mt-2" value=""/><input type="text" name="price[]" id="price[]" style="width: 120px;" placeholder="PRICE" CLASS="form-control mr-2 mt-2" value=""/><input type="text" name="stock[]" id="stock[]" style="width: 120px;" placeholder="STOCK" CLASS="form-control mt-2" value=""/><a href="javascript:void(0);" class="remove_button" style="color:black">Remove</a></div>'; //New input field html
+            var x = 1; //Initial field counter is 1
+
+            //Once add button is clicked
+            $(addButton).click(function () {
+                //Check maximum number of input fields
+                if (x < maxField) {
+                    x++; //Increment field counter
+                    $(wrapper).append(fieldHTML); //Add field html
+                }
+            });
+
+            //Once remove button is clicked
+            $(wrapper).on('click', '.remove_button', function (e) {
+                e.preventDefault();
+                $(this).parent('div').remove(); //Remove field html
+                x--; //Decrement field counter
+            });
+        });
+    });
+
+</script>
+    <script src="http://127.0.0.1:8000/Backend/js/jquery.dataTables.min.js"></script>
+    <script src="http://127.0.0.1:8000/Backend/js/dataTables.bootstrap4.min.js"></script>
+    <script src="http://127.0.0.1:8000/Backend/js/dataTables.responsive.min.js"></script>
+    <script src="http://127.0.0.1:8000/Backend/js/responsive.bootstrap4.min.js"></script>
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "autoWidth": false,
+            });
+        });
+    </script>
+</body>
+</html>
