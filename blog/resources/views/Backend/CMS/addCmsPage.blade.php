@@ -24,7 +24,7 @@
                             Title:
                             <input type="text" id="title" name="category_name" class="form-control ml-3 @error('title') is-invalid @enderror" value="{{ old('title') }}" autocomplete="title" autofocus placeholder="Title">
                             @error('title')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 60px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -33,16 +33,16 @@
                             URL:
                             <input type="text" id="url" name="url" class="form-control ml-3 @error('url') is-invalid @enderror" value="{{ old('url') }}" autocomplete="url" autofocus placeholder="URL">
                             @error('url')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 60px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
                         <div class="input-group mb-3">
                             Description:
-                            <textarea type="text" id="description" class="form-control ml-3 @error('description') is-invalid @enderror" value="{{ old('description') }}" autocomplete="description" name="description"  autocomplete="description" autofocus></textarea>
+                            <textarea type="text" id="description" class="form-control ml-3 @error('description') is-invalid @enderror" autocomplete="description" name="description" autofocus>{{ old('description') }} </textarea>
                             @error('description')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 100px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror

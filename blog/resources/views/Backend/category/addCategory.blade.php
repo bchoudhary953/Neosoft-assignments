@@ -24,7 +24,7 @@
                         Category Name:
                         <input type="text" id="category_name" name="category_name" class="form-control ml-3 @error('category_name') is-invalid @enderror" value="{{ old('category_name') }}" autocomplete="category_name" autofocus placeholder="Category Name">
                         @error('category_name')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 140px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -47,7 +47,7 @@
                         URL:
                         <input type="text" id="url" name="url" class="form-control ml-3 @error('url') is-invalid @enderror" value="{{ old('url') }}" autocomplete="url" autofocus placeholder="URL">
                         @error('url')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 70px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -55,7 +55,7 @@
                     <div class="input-group mb-3">
                         Description:
                         
-                        <textarea type="text" id="description" name="description" class="form-control ml-3 @error('description') is-invalid @enderror" value="{{ old('category_name') }}" autocomplete="description" autofocus></textarea>
+                        <textarea type="text" id="description" name="description" class="form-control ml-3 @error('description') is-invalid @enderror" autocomplete="description" autofocus>{{ old('description') }}</textarea>
                         @error('description')
                             <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
                                 <strong>{{ $message }}</strong>

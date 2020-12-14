@@ -40,7 +40,7 @@
                     </div>
                     <div class="input-group mb-3">
                         Content:
-                         <textarea type="text" id="content" class="form-control ml-3 @error('content') is-invalid @enderror" value="{{ old('content') }}" autocomplete="content" name="content"  autocomplete="content" autofocus></textarea>
+                         <textarea type="text" id="content" class="form-control ml-3 @error('content') is-invalid @enderror" autocomplete="content" name="content"  autocomplete="content" autofocus>{{ old('content') }}</textarea>
                             @error('content')
                             <span class="invalid-feedback " style="margin-left: 70px;" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -67,9 +67,9 @@
                     </div>
                     <div class="input-group mb-3">
                         Banner Image:
-                        <input type="file" id="image" class="ml-3" name="image" accept="image/*" required>
-                         @error('sort_order')
-                            <span class="invalid-feedback " style="margin-left: 60px;" role="alert">
+                        <input type="file" id="image" name="image" class="form-control ml-3 @error('image') is-invalid @enderror" value="{{ old('image') }}"  accept="image/*" autofocus>
+                            @error('image')
+                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror

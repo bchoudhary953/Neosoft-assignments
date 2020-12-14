@@ -62,6 +62,9 @@ class OrderController extends Controller
         return view('Backend.update-order-status')->with(compact('orders'));
     }
     public function export(Request $request){
+         request()->validate([
+            'date'=>'required',
+        ]);
         return Excel::download(new OrdersExport($request->date), 'OrderDateWise_'.$request->date.'.xlsx');
     }
     public function export_byMonth(Request $request){

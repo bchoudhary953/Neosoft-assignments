@@ -97,18 +97,13 @@
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="/product">Products</a></li>
-                                    <li><a href="/product-detail">Product Details</a></li>
+                                   
                                     <li><a href="/checkout">Checkout</a></li>
                                     <li><a href="/cart">Cart</a></li>
                                     <li><a href="/login-registration">Login</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="blog.html">Blog List</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
+                           
                             
                             <li><a href="/contact-us">Contact</a></li>
                         </ul>

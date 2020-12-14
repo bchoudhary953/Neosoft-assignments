@@ -64,6 +64,9 @@ class CouponsController extends Controller
         Coupons::where('id',$data['id'])->update(['status'=>$data['status']]);
     }
     public function export(Request $request){
+         request()->validate([
+            'date'=>'required',
+        ]);
         return Excel::download(new CouponsExport($request->date), 'CouponDateWise_'.$request->date.'.xlsx');
     }
     public function export_byMonth(Request $request){

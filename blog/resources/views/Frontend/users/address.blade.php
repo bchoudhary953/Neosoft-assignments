@@ -38,7 +38,7 @@
                                 @endforeach
                             </select>
                                     </select>
-                                    <a href="javascript:void(0);" class="add_button" title="Add Field">Add</a>
+                                     <a href="javascript:void(0);" class="add_button" style="color: black" title="Add Field">Add</a>
                                 </div>
                             </div>
                         </div>

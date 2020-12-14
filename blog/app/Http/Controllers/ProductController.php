@@ -28,7 +28,7 @@ class ProductController extends Controller
 {
     public function index(){
        $categories = Category::where(['parent_id'=>0])->get();
-        $categories_dropdown = "<option value='' selected disabled>Select</option>";
+        $categories_dropdown = "<option value='0' selected disabled>Select</option>";
         foreach ($categories as $cat){
             $categories_dropdown .= "<option value='".$cat->id."'>".$cat->name."</option>";
             $sub_categories= Category::where(['parent_id'=>$cat->id])->get();
@@ -49,7 +49,7 @@ class ProductController extends Controller
               'description' => 'required',
               'color' => 'required',
               'price' => 'required',
-              'image' => 'image|mimes:png,jpeg,jpg|max:2048',
+              'image' => 'required|image|mimes:png,jpeg,jpg|max:2048',
             ]);
             $product = new Product;
             //$product_image = new ProductImage;

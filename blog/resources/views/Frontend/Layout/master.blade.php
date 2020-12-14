@@ -43,34 +43,34 @@
 <script src="{{asset('Frontend/js/jquery-migrate-1.4.1.min.js')}}"></script>
 
 <script>
-    //Add product attribute
-    $(document).ready(function(){
-        var maxField = 10; //Input fields increment limitation
-        var addButton = $('.add_button'); //Add button selector
-        var wrapper = $('.field_wrapper'); //Input field wrapper
-        var fieldHTML = '<div style="display: flex;"><input type="text" name="address1[]" id="address1[]" style="width: 550px;" placeholder="Address1" CLASS="form-control mr-2 mt-2" value=""/>' +
+    //Add address
+    $(document).ready(function () {
+            var maxField = 10; //Input fields increment limitation
+            var addButton = $('.add_button'); //Add button selector
+            var wrapper = $('.field_wrapper'); //Input field wrapper
+            var fieldHTML = '<div style="display: flex;"><input type="text" name="address1[]" id="address1[]" style="width: 550px;" placeholder="Address1" CLASS="form-control mr-2 mt-2" value=""/>' +
             '<input type="text" name="address2[]" id="address2[]" style="width: 550px;" placeholder="Address2" CLASS="form-control mr-2 mt-2" value=""/>' +
             '<input type="text" name="pin_code[]" id="pin_code[]" style="width: 150px;" placeholder="Pin Code" CLASS="form-control mr-2 mt-2" value=""/>' +
-            '<input type="text" name="state[]" id="state[]" style="width: 150px;" placeholder="State" CLASS="form-control mt-2" value=""/><input type="text" name="country[]" id="country[]" style="width: 150px;" placeholder="Country" CLASS="form-control mt-2" value=""/><a href="javascript:void(0);" class="remove_button">Remove</a></div>'; //New input field html
-    success: callback
+            '<input type="text" name="state[]" id="state[]" style="width: 150px;" placeholder="State" CLASS="form-control mt-2" value=""/><input type="text" name="country[]" id="country[]" style="width: 150px;" placeholder="Country" CLASS="form-control mt-2" value=""/><a href="javascript:void(0);" class="remove_button" style="color:black">Remove</a></div>'; //New input field html
             var x = 1; //Initial field counter is 1
 
             //Once add button is clicked
-            $(addButton).click(function(){
+            $(addButton).click(function () {
                 //Check maximum number of input fields
-                if(x < maxField){
+                if (x < maxField) {
                     x++; //Increment field counter
                     $(wrapper).append(fieldHTML); //Add field html
                 }
             });
 
             //Once remove button is clicked
-            $(wrapper).on('click', '.remove_button', function(e){
+            $(wrapper).on('click', '.remove_button', function (e) {
                 e.preventDefault();
                 $(this).parent('div').remove(); //Remove field html
                 x--; //Decrement field counter
             });
         });
+
     //Billing address to shipping address
         $('#billtoship').click(function (){
             if (this.checked){

@@ -24,7 +24,7 @@
                         First Name:
                         <input type="text" id="first_name" name="first_name" class="form-control ml-3 @error('first_name') is-invalid @enderror" value="{{ old('first_name') }}" autocomplete="first_name" autofocus placeholder="First Name">
                             @error('first_name')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 100px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
@@ -33,7 +33,7 @@
                         Last Name:
                         <input type="text" id="last_name" name="last_name" class="form-control ml-3 @error('last_name') is-invalid @enderror" value="{{ old('last_name') }}" autocomplete="first_name" autofocus placeholder="Last Name">
                             @error('last_name')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 100px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
@@ -43,7 +43,7 @@
                         Email:
                         <input type="email" id="email" name="email" class="form-control ml-3 @error('email') is-invalid @enderror" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="Email">
                             @error('email')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 70px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
@@ -52,7 +52,7 @@
                         Password:
                         <input type="password" id="password" name="password" class="form-control ml-3 @error('password') is-invalid @enderror" value="{{ old('password') }}" autocomplete="password" autofocus placeholder="Password">
                             @error('password')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 100px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror

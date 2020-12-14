@@ -33,7 +33,7 @@
                         Notification Email:
                         <input type="text" id="notification_email" name="notification_email" class="form-control ml-3 @error('notification_email') is-invalid @enderror" value="{{ old('notification_email') }}" autocomplete="notification_email" autofocus placeholder="Notification Email">
                             @error('notification_email')
-                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                            <span class="invalid-feedback " style="margin-left: 150px;" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror

@@ -27,6 +27,7 @@ class BannerController extends Controller
                 'sort_order' => 'required',
                 'link' => 'required',
                 'image' => 'required|image|mimes:png,jpg|max:2048',
+
             ]);
 
             $data =$request->all();

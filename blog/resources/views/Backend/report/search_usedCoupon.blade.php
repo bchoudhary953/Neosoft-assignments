@@ -18,7 +18,13 @@
                         <form action="{{url('/exportCoupon')}}" method="post">
                             @csrf
                             <label>Take a Date</label>
-                            <input type="date" class="form-control" name="date" required>
+                            <input type="date" class="form-control" name="date" @error('date') is-invalid @enderror" value="{{ old('date') }}" autocomplete="date">
+                            
+                        @error('date')
+                            <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                             <button class="btn btn-primary mt-2" type="submit">Search</button>
                         </form>
                     </div>

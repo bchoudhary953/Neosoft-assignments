@@ -65,7 +65,7 @@
 <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<!--script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script-->
 <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- Charting library -->
@@ -80,7 +80,7 @@
         
         //banner status
         $(".BannerStatus").change(function () {
-            //alert("Error");
+            alert("Error");
             var id = $(this).attr('rel');
             //alert(id);
             if ($(this).prop("checked") == true) {

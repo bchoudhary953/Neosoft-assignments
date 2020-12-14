@@ -55,7 +55,7 @@
                     </div>
                     <div class="input-group mb-3">
                             Product Description:
-                            <textarea type="text" id="description" class="form-control ml-3 @error('description') is-invalid @enderror" autocomplete="url" name="description"  autocomplete="description" autofocus>{{ old('description') }}</textarea>
+                            <textarea type="text" id="description" class="form-control ml-3 @error('description') is-invalid @enderror" name="description"  autocomplete="description" autofocus>{{ old('description') }}</textarea>
                             @error('description')
                             <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -74,7 +74,7 @@
                     <div class="input-group mb-3">
                         Product Image:
                         
-                        <input type="file" id="image" name="image" class="form-control ml-3 @error('image') is-invalid @enderror" accept="image/*" autofocus >
+                        <input type="file" id="image" name="image" class="form-control ml-3 @error('image') is-invalid @enderror" value="{{ old('image') }}"  accept="image/*" autofocus>
                             @error('image')
                             <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
                                 <strong>{{ $message }}</strong>

@@ -34,7 +34,7 @@
                             Amount:
                             <input type="text" id="amount" name="amount" class="form-control ml-3 @error('amount') is-invalid @enderror" value="{{ old('amount') }}" autocomplete="amount" autofocus placeholder="Amount">
                             @error('amount')
-                                <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
+                                <span class="invalid-feedback " style="margin-left: 90px;" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror

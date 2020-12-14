@@ -71,6 +71,9 @@ class DashboardController extends Controller
         User::where('id',$data['id'])->update(['status'=>$data['status']]);
     }
     public function export(Request $request){
+        request()->validate([
+            'date'=>'required',
+        ]);
         return Excel::download(new UsersExport($request->date), 'UserDateWise_'.$request->date.'.xlsx');
     }
     public function export_byMonth(Request $request){

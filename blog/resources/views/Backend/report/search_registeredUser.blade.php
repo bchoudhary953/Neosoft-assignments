@@ -18,7 +18,7 @@
                         <form action="{{url('/exportUser')}}" method="post">
                             @csrf
                             <label>Take a Date</label>
-                            <input type="date" class="form-control" name="date" @error('date') is-invalid @enderror" value="{{ old('date') }}" autocomplete="date" required>
+                            <input type="date" class="form-control" name="date" @error('date') is-invalid @enderror" value="{{ old('date') }}" autocomplete="date">
                             
                         @error('date')
                             <span class="invalid-feedback " style="margin-left: 120px;" role="alert">
